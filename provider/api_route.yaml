@@ -1,0 +1,93 @@
+provider: api_route
+label:
+  en_US: API Route
+description:
+  en_US: Use multiple chat models through one API Route key.
+icon_small:
+  en_US: icon.png
+icon_large:
+  en_US: icon.png
+help:
+  title:
+    en_US: Get an API Route API key
+  url:
+    en_US: https://www.api-route.com/
+supported_model_types:
+  - llm
+configurate_methods:
+  - customizable-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_key
+      label:
+        en_US: API Key
+      type: secret-input
+      required: true
+model_credential_schema:
+  model:
+    label:
+      en_US: Model ID
+    placeholder:
+      en_US: Enter an exact API Route model ID, such as gpt-5.5
+  credential_form_schemas:
+    - variable: api_key
+      label:
+        en_US: API Key
+      type: secret-input
+      required: true
+    - variable: context_size
+      label:
+        en_US: Model context size
+      type: text-input
+      required: false
+      default: "32768"
+    - variable: max_tokens_to_sample
+      label:
+        en_US: Maximum output tokens
+      type: text-input
+      required: false
+      default: "4096"
+    - variable: function_calling_type
+      label:
+        en_US: Function calling
+      type: select
+      required: false
+      default: tool_call
+      options:
+        - value: tool_call
+          label:
+            en_US: Supported
+        - value: no_call
+          label:
+            en_US: Not supported
+    - variable: stream_function_calling
+      label:
+        en_US: Stream function calling
+      type: select
+      required: false
+      default: supported
+      options:
+        - value: supported
+          label:
+            en_US: Supported
+        - value: not_supported
+          label:
+            en_US: Not supported
+    - variable: vision_support
+      label:
+        en_US: Vision support
+      type: select
+      required: false
+      default: no_support
+      options:
+        - value: support
+          label:
+            en_US: Supported
+        - value: no_support
+          label:
+            en_US: Not supported
+extra:
+  python:
+    provider_source: provider/api_route.py
+    model_sources:
+      - models/llm/llm.py
