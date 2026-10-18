@@ -1,6 +1,6 @@
 [project]
 name = "api-route-dify"
-version = "0.0.1"
+version = "0.0.2"
 description = "API Route model provider for Dify"
 readme = "README.md"
 requires-python = ">=3.12"

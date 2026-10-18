@@ -1,6 +1,6 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
-author: DennyHo0917
+author: dennyho0917
 repo: https://github.com/DennyHo0917/dify-plugin-api-route
 contact: dennyho0917@gmail.com
 name: api_route
